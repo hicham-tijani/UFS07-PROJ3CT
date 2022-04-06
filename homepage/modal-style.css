@@ -1,0 +1,159 @@
+  
+/*----------------- modal music --------------*/
+
+  .modal-window-music {
+    position: fixed;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    
+  }
+  .modal-window-music:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-window-music > div {
+    width: 375px;
+    position: absolute;
+    top: 33%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: transparent;
+    -webkit-mask-image: radial-gradient(circle at left  bottom  , transparent 64px, black 65px);
+  }
+
+
+  /*------------- Modal Window 2 --------------------------------------------*/
+
+  .modal-window {
+    position: fixed;
+    background-color: transparent;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-mask-image: radial-gradient(circle at left   center  , transparent 36px, black 37px);
+    pointer-events: none;
+    transition: all 0.3s;
+    
+  }
+  .modal-window:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-window > div {
+    width: 375px;
+    height: 195px;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: rgba(243, 236, 236, 0.181);
+  }
+
+  .modal-window header {
+    font-weight: bold;
+  }
+  .modal-window h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+  }
+  
+  .modal-close {
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+  }
+
+  .modal-close:hover {
+    color: black;
+  }
+  
+  .container-modal {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .modal-window > div {
+    
+    -webkit-border-radius: 40px;
+  -webkit-border-top-left-radius: 35px;
+  -webkit-border-top-right-radius: 35px;
+  -moz-border-radius: 40px;
+  -moz-border-radius-topleft: 35px;
+  -moz-border-radius-topright: 35px;
+  border-radius: 40px;
+  border-top-left-radius: 35px;
+  border-top-right-radius: 35px;
+  }
+  
+  .modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+  
+  .case{
+    position: absolute;
+    top: 75%;
+    left: 42%;
+  }
+
+  .airpods{
+    position: absolute;
+    top: 75%;
+    left: 52%;
+  }
+
+  .case_img{
+    position: absolute;
+    top: 75%;
+    left: 761px;
+    height: 95px;
+  }
+
+  .airpods_img{
+    position: absolute;
+    top: 75%;
+    left: 610px;
+    height: 95px;
+  }
+
+  .case_battery{
+    position: absolute;
+    top: 89%;
+    left: 54%;
+  }
+
+  .airpods_battery{
+    position: absolute;
+    top: 89%;
+    left: 44%;
+  }
+
+  .apple_logo{
+    position: absolute;
+    top: 70%;
+    left: 39%;
+  }
+  /*-----------------------------------------------*/
+  

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Widget</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"> </script>
+
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>            
+
+<!--link css-->
+<link rel="stylesheet" href="home_style.css">
+<link rel="stylesheet" href="chat.css">
+<link rel="stylesheet" href="modal-style.css">
+<link rel="stylesheet" href="toggle-style.css">
+
+</head>
+<body>
+
+<main>
+	
+    <button onclick="ToggleNav('navigation');" class="sx">
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABPklEQVRIid2VsU4CQRCGORobrWygoOYVLjHSgc9DKe9wb4GF5i52ih3hNQiFjQ1IIiUxfBY3G8e9HUT2jIl/srndf+b+f+f2bq7RiADQAXJgI+Me6MZo+uKvVLEGOj8RagJJgM+V6KMMh7tDhFvANbAAnoEMSFV8I2IPipsI97ZvtwPZ3TZQPsCZ5C7d7gMGS8tgqoS2QKHWmVRyIbk6NgGe1LqwDBxGQFtzMk+AU5n3gF2gwh3Q22vwHadiNwGDcVD8SIM2sFLiK1d5tAFwKdc+8C6jb4ofYfCizmkIDGV+XpcBwMzjTnwu1sDPvbXOqy6DCtc03WrCPzZAuqlaZ0BKuHV/yTWhvsgCu5u61m3lTg8xQG7KKdt3ymc3DcF13ivAfuzADJhTdtNWIJ54ZgvKn1IlNxpi9usvyd/jA/6d+cM678UfAAAAAElFTkSuQmCC">
+	</button>
+
+	<button onclick="ToggleNav('weather');">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABf0lEQVRIie3UTUtVURTG8e0luGVoVNhNgz5CA4dNehECkUjSr9DUaRlckBo0rUFfoFGToBCHTnJSk3BmIYE6t7SSEIpfg7NubA735Vy9Q5/J4ey91v9Ze+2XlE50XOEymviEPRxgHU9w6bjwOezqrG+4f1T4PfwJ0AqmcB5ncQvLMfe3kgnqWMAH/MqqbHbJeRwx37u2C1eir2UtY6hHYSsRu9St8hZ8J/o+gnMYqbDyqaygA7zHbB6wkMEv9AK2MRiOfSjrWSvgYwzM9QvPTKYxhgk8xGEw7yb8jJ+e7ejD8FEwV5PiLMPFARqMB/NHLaX0OcZvD8ogpVTL3R6E2ybGBkHHYt6ierbRXzF/BOAsGor7tJht8kwrYFxxg1ua7AAaRaM0dqPNEYWn5eRTeBWT71ArzQ/hdazyjuJNuontyDmME7n6v/I2FTawHwlvMYkzuIY3HSqFNZyu2s/rine/nfbwAl/wO75N1CvBM5MJPMdGgLbwElf7Ap2oiv4BBLOjMjvSGEwAAAAASUVORK5CYII=">
+	</button>
+    
+	<button onclick="ToggleNav('camera');">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABE0lEQVRIie2TTU4CQRBGW/AQYDwMS+VH1i7YcgTnAIbEreEGLLiFQCDsPIXDCcDEqDHPTU3Sdqqajj07+JLOTPqrflVTNe3cWXUIuAO+0TUDLnLgHeDDgFd6TgF1gTICmSpnboCvIK4EbrUEMfgcaBiF3QM/QfybFghAUt/infjDsaraAptgbwisgHdZS2Dwr8zABlh73lOkfZPYFxw1pHKAT+ABuJJVyB5APyfBSqxC8QrxFjkJDmK1Fa8l3t7iqEM2pN3WZsW1DqUkeJXnSPFGQYytSIsG3pALY8i9Y5zoRQMm2HpM4sQSiN8HFjL0A/DiV56dIFUh59Lzds656zqSOOfK6sX/i8a+kQkf18A5Ff0CEwVGdypMdwYAAAAASUVORK5CYII=">
+	</button>
+
+	<button onclick="ToggleNav('greenpass');" class="dx">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAACh0lEQVRIiaWWOUxUURSGvwOjbEYWSVwqNXYUxgIKJRhMiFE0oUYbTCyIFjRKobausbBXiYmFUSOFgoqFkUBlCIX2dhiUZVBncDTyW7wzcOfxhszon7zcd/6z3eXcd55JSgGDwDGgmgifzewkZUDSC2CHiz+Bl8CNfPBTwFUg5waz5QR33AS2+3sVcAlYQdKkpN5/CLghJPVKmkwBtUA2UNT6DPLImNmvmHOlmf2RtBmoC1Q5M8vHygK1FTHHGmAeWAiesZhNH3DPxbGY7ZzHWEUFMAN8dbmK6KD3AE3AaaA+tvr6gKt3myb3qQlWPwfMpMysm/VIm1laUiZBF0fGzBYlKSTNbALoThVx6vHgrXlC0j7gALA/ZntQ0iYKz2IV8QQZ4C1wPuDe+XgdaAO+AE8C3RF/cN9SVr0ekoYlDZTrV2yLSkl4Djjs4lMze5xkFy9Tk3RZ0oWA2y3pGtAS8/0ATAGNRJ+ZRBRbgRK4Z8CrvGBm48C41/0JSYPAvJndDZ2sWOZikNQGtJjZkMudQL+rvwNnzWyl3LhhggFJw6XaF2yR1/NrYGtAT5hZYvVIugMcCqhvwFEz+52YgOiydAJ9RPXcCnRtMMEO4A3w3n2HfEwnWktqUIQGl3skTfv7bUkLkjKSHjk3LaknyTePCkmjktpjuRokNVJ4/fcC933W/QFf57YFgSW1SxpJATuBZudzRO3uU2Cb/1QsAR/NbCrQLQEPA3mZta7YDOwqOAMzW5a0jcKG88PHMwnl1wVsCeScmS2HBim88wRJsgQdLuDX1bZXy2Kcd9QB2RQwClyRVEm0PQCzflNLhqQO1pp+NVHTf2D+23IROM7//bY8JzpPfKIjwK2/4Zcq46rpJjkAAAAASUVORK5CYII=">
+	</button>
+
+</main>
+
+<!--- Maps --->
+<div id="navigation" class="container">
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (p) {
+        var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+        var mapOptions = {
+            center: LatLng,
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+        var marker = new google.maps.Marker({
+            position: LatLng,
+            map: map,
+            title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
+        });
+        google.maps.event.addListener(marker, "click", function (e) {
+            var infoWindow = new google.maps.InfoWindow();
+            infoWindow.setContent(marker.title);
+            infoWindow.open(map, marker);
+        });
+    });
+} else {
+    alert('Geo Location feature is not supported in this browser.');
+}
+</script>
+<div id="dvMap" class="dvMap">
+</div>
+</div>
+<!-----------end maps-------------->
+
+
+<!-----------weather----------------->
+
+<div id="weather" class="container_weather">
+
+    <div class="weather-app flex">
+        
+        <div class="col-2 flex p-md">
+            <div class="col-2 flex flex-col">
+                <div>
+                    <h2 id="townName" class="border-bottom">Location</h2>
+                    <p class="text-xs text-darker">
+                        lat <span id="lat">00000000</span><br>
+                        lon <span id="lon">00000000</span>
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-dark">
+                        <span id="fahrenheit" class="toggle-unit">°F</span> | <span id="celsius" class="toggle-unit toggled">°C</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="col flex flex-col">
+                <div class="flex align-center d-inline-block m-auto">
+                    <canvas id="icon" width="88" height="88"></canvas>
+                </div>
+                <div class="d-inline-block m-auto">
+                    <p id="time" class="text-sm text-right text-dark border-bottom">00:00AM</p>
+                    <h1 class="text-right d-block">
+                        <span id="temp">0</span>°<span id="tempUnit" class="text-darker">C</span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+    
+<!-------------end weather------------------->
+
+<!-- Camera -->
+<div id="camera" class="container">
+
+    <section class="app">
+        <video id="CameraOutput" autoplay></video>
+        </section>
+            
+</div>
+<!-- end Camera -->
+
+<!-- chats -->
+<img onclick="ToggleNav('chats');" class="icon_chat" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAABWElEQVRoge2YuU7EMBRFz0PTD0tJDSWU82t08AHAlwA9QnwEJRIdomRQQongUrAoi0lwQuJ48CmdvOSevCyOIZH435hvgSQNEaSBZ+AaODCz2+rGGAS+eAL2zey+OLgWKEwXNoCT6mBMHQDIzWxeHPAWGJvqBTOzUuaYbiEnSSA0TgFJu5IuJOUanlzSuaSdLgK1h1jSNnADbHU5YA+WwJ6ZPVTyeD/Ex4wfHmATOPUtcnXg8fNgIcjMbL2Sp7EDLoEXYPZTwV/TFjB9B6ZOEgjNSgpMfoZaZCU7EBVJIDTRC8wcY5N6C7XNxaLvQBIITRIIjestVEPSArgE5m379iTzLWjtwIjhAa58C1z/xK+UxTLGCb8EFmZ251P0m+n00OFz4IwO4Z1IemtYRTvsfYKhaRCYfnj4WIeJNjw4BeIJDzWBuMJDSSC+8PAtEGd4AElHoTMkYuIdJdlLImbmawcAAAAASUVORK5CYII=">
+
+<div id="chats" class="container_chats">   
+
+<div class="chat">
+    <div class="chat-title">
+      <h1 class="nome">Hicham Tijani</h1>
+      <span class="dot"></span>
+      <figure class="avatar">
+        <img src="https://lh3.googleusercontent.com/a-/AOh14GiPy7WI9k5zOGkDin_BpzGWDiT2g4lRAeB35jZQ=s360-p-rw-no" /></figure>
+    </div>
+
+
+    <div class="messages">
+      <div class="messages-content"></div>
+    </div>
+
+    <div class="message-box">
+      <textarea type="text" class="message-input" placeholder="Scrivi..."></textarea>
+      <button type="submit" class="message-submit">Invia</button>
+    </div>
+  
+  </div>
+  <div class="bg"></div>
+
+ </div>
+
+<!-- end chats -->
+
+
+
+
+<!-- greenpass -->
+<div id="greenpass" class="container_greenpass">   
+ 
+        <a onclick="myFunction()" class="btn_greenpass">
+     <img class="tap" src="../gif-img/icons8-tap-gesture-unscreen.gif" alt="">
+       </a>
+        
+    <img  id="snackbar" src="../gif-img/animation-200-l1ajjt5p-unscreen.gif" alt="">
+
+ </div>
+
+<!-- end greenpass -->
+
+<!------------Logo------------->
+
+<img  class="logo" src="../gif-img/HT.png" alt="">
+
+
+<!------------end Logo------------->
+
+
+<!------------ More------------->
+
+  <a href="#">
+      <img onclick="ToggleNav('more');" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAABtElEQVRYhe2WMW8TQRSEvz1LKFi2LEwVIyWkcOXynq4h4hcgGkgT+vQJVOQnREpNQQsFpEPUlkg6763cuA4okaDBFLF0iePbTXOF5RihXduRUDLdvtGbmV3d21u4w22HCm3sdDrPoyh6WSw/x3H85cYCaK3fAHsT5dcisr/wAO12e6larf4BliaorFarPWg2mxc+epFvgHK5vDLFHOB+v99f9dXzDlCpVL4DgynUWalUOl54gFarNVRK7QB2rGydc9sicumrFzwFWut1YANwwIGIHIVq/b8wxjSMMY1ZNELvgRXgI/CkKB1ZazeTJDnx1fL+CAuMmwOsR1H0IUTI+wS63e6j0Wh0+he6ISI/ffS8T2A4HOa+PXMNkCTJL+DayDnnvvnuPigAgLV2EzgcN8/z/FWI1kzQWi9rrZdv3HieCL6KjTFPrbUvAJRSB3EcH/6rZ24B0jTdcs69G+t3wJaIvF94gF6vdy/Lst9AZYI6Ax76/hG9p2AwGDyeYg5QzfN8zVfPO0C9Xv8BnE+hsoJbbIDizbc7WVdKvfV9D8IMU5Cm6TPn3Eax/CQiX0O17nC7cQXKO4mY2FjLtAAAAABJRU5ErkJggg==">
+    </a>
+
+<div id="more" class="container_more">
+
+	<a href="#open-modal-2">
+      <button  class="sx_more">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAADWUlEQVRYhe2XTWxVVRSF125KS62idQAVlIEoEsoEBoAVC6lGJc7AMCuRREsdMFZr7Ig0HQEJYcRPCDMaAzHECA2RVpRoiA60xQATwysTCiFA+bHafg7ueuHkprd9jSbG5K3k5Z2z99pr73POvue+J1VRRRX/DmImJzBf0hZJmyQtkHRD0llJpyNiYoa4OkmbJb0haaGku5IGJZ2IiEdzrhLYBpSAKWAEGACGyXAFeLUgrhW4at6w40asUwK2zaWIecARi50EVuX8LcB3wANgXc633vbzQEvOt8p6AIeBeZUU0w88BDoSWwDbgQvAFqAe+NYrbTCnwfMhoA7Yav52IBKtDusfn6mIGqDTlW9N7AssWsYe218C/gQ+8LwTmACWeb4vifkeeCrRfM/2TqAmX8gK4JIJk8BuN2H5WKaAe0A3UJ/EDQH9Hn8BnEt89ebfc/xK2+usP+l8l4BXykHPAtfcZG1AD/AIOAc8Yc5qYNE0u3kUOO/xBeDQNJxFwGqPG4FB6/cAr7mY34EmAX1kTfd8IvA6cB84VniuGe8UcMrjr4AvZ+EfA8aBDYntBffQbpE9poeT4wqPd3gb2wuEn/YRfOL5Z8CdtDdy/Det977nAazw+Ajwm4A/gI+BJSa3JuSLwECB+AGvstnzxd7h/QX8s8APyWJbnW8J8CnwQMB1oBeYD4yR3SHlBF3AX+Xesa0O2GuhnbmEH9m+Bz8Atje6YTs9b3aeMbJG7wNKIruArgFPAhuBn8tHA6y1+Brv1Ls8voV3FezALvuHzQ/HA6w1p915NjpvCTgoYBlwl+zafi4n3GWRX4BRj2/4u6GgmIYcb9TxAF057mIf3x3gxbKxHbhFdml9TXYL/2qBcZN7vZKOCovpML/X8ePJwvqB0853E9gkSTWSFBHfSFouqUfSlKRmSRclvS3poKTRiOiOiKHpCihCRAxFRLekUeu8I+kn609K+lzS8ogYlKTaJPCWpD5/0pVunksBsxR3RtKZIn9NkeO/QLWYIlSLKUIlxZQkLfXlWCupTdJYRDycjmz7TUkbgFrgZUlLrfPPADSRvdnLmAQ+nCVmJ49/PAFcBp6ZLdeMf1US8UZJb0lqkvRjRIxUENMiaZ2k25IGIuJ+JbmqqOJ/i78BJG+FyR+swOQAAAAASUVORK5CYII=">
+	</button>
+</a>
+
+<a href="https://itsar.registrodiclasse.it/geopcfp2/">
+	<button  class="cc_more">
+	</button><img class="its" src="../gif-img/ITS-removebg-preview.png">
+</a>
+
+    <a href="#open-modal">
+	<button  class="dx_more">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAABmJLR0QA/wD/AP+gvaeTAAADS0lEQVRYhe2XTYiNURjH/8ede9NgJrdBoVlITJOvLBSWjK+FpVKMsqQYK2tJ+UhYWNCQjVI+ygJpSBZSksxMLLCjzIzCjM9c5mfxnts89zj3dd+57OapW/c95/9/nv855znnPEeasEpz9ZCBgqRZ/nPQOfejfkm1BS4CncA1YJA/bRC46jHF/yFgKrAfGIkEr2ZfgMNA878SsQF4Fwk0DPQBN4Cb/v9wBDcErK9XxD7gp3H6A+gG1gL5CD4PdADngZLh/QS66hFh7TawIAO/DegJfOzNKmJdMKJTQG4cg8n5PLEzs6lWcnOQE8eyCoj4PG78DQLTaiEdCpYj80xEfOaCZToYYlxAKEp6LalRUknSIufcC2CKpMWSlkpqldTkf3lJnyR9kPRG0nNJ/c65dxExbZL6JTVI+iKp1Tn3vpryTqO627cdAX6RzfqBo8DqwP95g9meNoXXDHCtb+sNggwDr4DHwEPgGfAGGK0i6okfoCPZBGW7kiZkyATL+7YVJFt5AzA3hdsErPTYOyRnjrVOoAB88t8Dlu+Mo4Kk776t1zm3LBZM0iJJMyS1eOxHSQNKcmPYYFsk7ZK022M3O+duAL2SlkgalTTZOVcKg7Qa9beCvp1+3dNyZRR4CZwEVgHOc/PAbOPrluG0xqY2TUif6RsCngMPSPLkhZlua0+AzWVBWYQUGEu4p0FfO8kdMvMPYtI/CZgP7ACuA99NsANVBvWLyH1VBpVrjJGqoATXCMwB5gEtQEPQPxc4C3wF9gSDjSZrGOCqGUmHaW8GjgH3gA+RZfgGPCI5ylcylh+5wP96w7mcJsQeaOdM+3I/lZ99wEvAaeAEySF1n8papA/YEvF/wWC2pQkp+mCQ3L5tQd+kFG4OWANcZKyGWWj62037Z2B6VSGecNCo7gmntxYDFgBbzXcDcNf4PZDGL5OaGDthAY5nFRLxecL4G6CWMsATO6gsjM4Q7Iwa/cQKo41ZnXRRaT02Z2rgtwfLAWYrZxWzl8riuUSySzpI7qYQXyC5YS9EeOMTYZyvI/6YGiHZpjf9r5/4u2cAcybVK2YK439gNf0TEYGgIrAduAK8pbIYGvVtl4Ft/O2cCKzeR3helY/wUhp+wrLYb5qMcDBkrR65AAAAAElFTkSuQmCC">
+	</button>
+</a>
+
+</div>
+<!------------end More------------->
+
+
+
+<!------------------Modal Window----------------->
+
+<div id="open-modal" class="modal-window-music">
+    <div>
+      <a href="#" title="Close" class="modal-close">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABmJLR0QA/wD/AP+gvaeTAAAB+UlEQVQ4ja2Uz0pbQRSHv5k7E2KIitB2mbRrn0EQErDgO4i46aLPYAutkDeoRWhx71pBiEXQV2jXEZftIjHJ/X9nuphOprdtoAsPHO6Fc893f+d37h14pBDLCnYw2EDKHlnWIY4t8/k90+lQnJ6O/wtkj4+fofURVbVPUWjSFOIY5nOYzQqm088kyaE4O/u+FGRPTjZptS5QqoO11CDTKcxm8PAAs9kd4/GuuLz86ntlTUmrdUG73WFtDdptaLWg2QStXUYRKAVSdlHq3G5tPf0LhNZHKNWh0YDV1QCIIpdSuhTCZxch3tVAdjDYoKr2sRaqyo1Ulu7eGLA2ZD0ObL+/HhRJ2asZ6/1IU8hzKIoA9mkMGNMgSXoACoAse04UOcnGuFGMcZA0hSwLwKJwoLL8tS7xIoDi2Gn2zVHkxigKB0kSd/VAD3UgE0BJMlo0au1Mtda9Nc8dII6DuiwLIGtHATSZXFGWBY2GXmzIG+9VpalT5tW5yGk2v9Q+SLu39xGtX6GU8woCyKvyIK8GPojb29dBkRvvkCx7iZTdGqiqAijLgsnWjtD6rW+v/yI7O5sodY4Q3YX5ZRm2tXjQjpByV9zcfPsnCMBubz/BmPfAAcY0/ijnwCeUeiOur3/8Xlh+jPT76yRJDym9ujtWVq7EcDhZ1vMo8RMjKinMmY69BAAAAABJRU5ErkJggg==">
+      </a>
+    
+      <iframe style="border-radius:18px" 
+      src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLiRSasKsNU9?utm_source=generator"
+       width="102%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+     
+      </div>
+  </div>
+
+<!------------------Modal Window 2 ----------------->
+
+
+<div id="open-modal-2" class="modal-window">
+    <div>
+      <a href="#" title="Close" class="modal-close"> 
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABmJLR0QA/wD/AP+gvaeTAAAB+UlEQVQ4ja2Uz0pbQRSHv5k7E2KIitB2mbRrn0EQErDgO4i46aLPYAutkDeoRWhx71pBiEXQV2jXEZftIjHJ/X9nuphOprdtoAsPHO6Fc893f+d37h14pBDLCnYw2EDKHlnWIY4t8/k90+lQnJ6O/wtkj4+fofURVbVPUWjSFOIY5nOYzQqm088kyaE4O/u+FGRPTjZptS5QqoO11CDTKcxm8PAAs9kd4/GuuLz86ntlTUmrdUG73WFtDdptaLWg2QStXUYRKAVSdlHq3G5tPf0LhNZHKNWh0YDV1QCIIpdSuhTCZxch3tVAdjDYoKr2sRaqyo1Ulu7eGLA2ZD0ObL+/HhRJ2asZ6/1IU8hzKIoA9mkMGNMgSXoACoAse04UOcnGuFGMcZA0hSwLwKJwoLL8tS7xIoDi2Gn2zVHkxigKB0kSd/VAD3UgE0BJMlo0au1Mtda9Nc8dII6DuiwLIGtHATSZXFGWBY2GXmzIG+9VpalT5tW5yGk2v9Q+SLu39xGtX6GU8woCyKvyIK8GPojb29dBkRvvkCx7iZTdGqiqAijLgsnWjtD6rW+v/yI7O5sodY4Q3YX5ZRm2tXjQjpByV9zcfPsnCMBubz/BmPfAAcY0/ijnwCeUeiOur3/8Xlh+jPT76yRJDym9ujtWVq7EcDhZ1vMo8RMjKinMmY69BAAAAABJRU5ErkJggg==">
+      </a>
+    </div>
+
+      <img class="case"src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAAEs0lEQVR4nO3dzW9UVRzG8Q8DQmJpq1DF+IaIgALG17jBDcSYmIhoYtjpzsSFK1+3RmPUxJjgy4KNCzf8AxpZGIwRMK5ciGiBKCCIJBZoCyaIVhenU4ah0zIz995z5/Z8kyfTuZ20v/PMzTn3vP3OPOXiKtyF1ZO6E3dgMfpw7eQrnMPpyddxHMIwDky+/owLBcY+I/Mi///5uBcPYwMexWBGf/sv7MUe7MbXSmR8UazDOziJ/wrSKWwXvtRKM4hXsV9x5rbSfryCgVxLXDBDeF24o2Ib3KwxbMMNuZW+APrxLs6Kb+hsGsfbQqPbU2zGEfENbFfH8WwOfmTOCuwU37Bu9QVuy9ibzNiinPVwpxrF1kwd6pJFQoMyIb45eWg7FmbmVodcj+/ENyNvfSs8PUVhudDNjW1CUTqElZk41wbr8FuXgfeifsc9Gfh3RdytWo1euxrB+q5dnIVbcDRyQcug43J8/Bsyt+rk2XQQy7pydBoWmRtPF+1qr4wf/T4sQaHKqve78PUSNqtuZyQLTeCpjt2dZIUwXRS7MGXXKaFf0TGfl6AQvaKdHXpsawmC7zW1XYX041gJAu81HdVi8mB+C6PfxGMtfpdozaBg+K7mX0y33GApDuvBaZ2ScE7oNf7ZeLE2zQdflEzuhj680Hyx+Y4eEOb6rikiogozKjzujdYvNN/Rz0smZ8EgnpvpAz+J33JXRT82Gtt4Rz8kLCpMZMNa3F9/02j0M8XHUnmmPK03hvNxAtdFCae6nMSNmKjf0Q9IJufBMmFZ8lTVsSleLJVnExeN3hgxkKqzkVBHLxTGU/tm/HiiU85iSQ1rJJPzZDFW1Y1O5MuaZHQxJKMLYk0Nt8eOYg6wsia7fX2J1gzWhPnBRL70J6OLoX8ezivB1oGKc366OcNEDtSELmIiX8Zrwq7RRL4kowtirIYzsaOYA4zW8GvsKOYAv9SEtDiJfBlORhdDMroghtNUVv6MY2kNfwtZtBL58A0u1LvgX8WMpOLs4uJyg8tWqCcyYxdpSVje/IGbNCwJ+xc74sVTWXYIGz4v4UHx1xRXTfe1+gZ+KEFwVVHLhejwaatvINE2nzS+mW6z0GEhfXCic04JW+CmhqCb7+gxfFxkRBXlA03j/GlDZ/aMCXfz6caL003OjuCjIiKqKNs0mTwTVwt3deyWu9d0RAeDc0+XIPBe05Z2Ta6TEqNcuTpOjMLFSj12IcquEdzaocdTPC4lr5pJE3iyY3eb2FaCApVV73Xh62UsFFL7xi5U2bRbOKQnU4ak7AeNOiDkz86Fm/XmIQlZ65gu89xdCeuFVjZ2YWNpRMifXQhrzc30xoUm6q6z3Nyqs/fL4Fm5U4aE1L6xTchbe4RRzagsEE5yq2KnZkLoQ5Rqj88TqtVInhEG1krJctUYiPpMxPq4HTYLC9xjG9aujumRQ8ka6cNbwtRObANn0xjeECY8epYBvKac9feo0JAvya30ERjAy9gnvsH78JI5sD27frjvCcWZOyLi4b6xj6uuCeeAb8Ajsj2u+pwwtPvlpL43zYLDoohtdDMLhIw4da3GKmGNSb+QCbi+3uSs8Kw7PvnzQZcewD6MfwqMfUb+BxA3DWDBcrc5AAAAAElFTkSuQmCC">
+      <img class="airpods" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABmJLR0QA/wD/AP+gvaeTAAAEs0lEQVR4nO3dzW9UVRzG8Q8DQmJpq1DF+IaIgALG17jBDcSYmIhoYtjpzsSFK1+3RmPUxJjgy4KNCzf8AxpZGIwRMK5ciGiBKCCIJBZoCyaIVhenU4ah0zIz995z5/Z8kyfTuZ20v/PMzTn3vP3OPOXiKtyF1ZO6E3dgMfpw7eQrnMPpyddxHMIwDky+/owLBcY+I/Mi///5uBcPYwMexWBGf/sv7MUe7MbXSmR8UazDOziJ/wrSKWwXvtRKM4hXsV9x5rbSfryCgVxLXDBDeF24o2Ib3KwxbMMNuZW+APrxLs6Kb+hsGsfbQqPbU2zGEfENbFfH8WwOfmTOCuwU37Bu9QVuy9ibzNiinPVwpxrF1kwd6pJFQoMyIb45eWg7FmbmVodcj+/ENyNvfSs8PUVhudDNjW1CUTqElZk41wbr8FuXgfeifsc9Gfh3RdytWo1euxrB+q5dnIVbcDRyQcug43J8/Bsyt+rk2XQQy7pydBoWmRtPF+1qr4wf/T4sQaHKqve78PUSNqtuZyQLTeCpjt2dZIUwXRS7MGXXKaFf0TGfl6AQvaKdHXpsawmC7zW1XYX041gJAu81HdVi8mB+C6PfxGMtfpdozaBg+K7mX0y33GApDuvBaZ2ScE7oNf7ZeLE2zQdflEzuhj680Hyx+Y4eEOb6rikiogozKjzujdYvNN/Rz0smZ8EgnpvpAz+J33JXRT82Gtt4Rz8kLCpMZMNa3F9/02j0M8XHUnmmPK03hvNxAtdFCae6nMSNmKjf0Q9IJufBMmFZ8lTVsSleLJVnExeN3hgxkKqzkVBHLxTGU/tm/HiiU85iSQ1rJJPzZDFW1Y1O5MuaZHQxJKMLYk0Nt8eOYg6wsia7fX2J1gzWhPnBRL70J6OLoX8ezivB1oGKc366OcNEDtSELmIiX8Zrwq7RRL4kowtirIYzsaOYA4zW8GvsKOYAv9SEtDiJfBlORhdDMroghtNUVv6MY2kNfwtZtBL58A0u1LvgX8WMpOLs4uJyg8tWqCcyYxdpSVje/IGbNCwJ+xc74sVTWXYIGz4v4UHx1xRXTfe1+gZ+KEFwVVHLhejwaatvINE2nzS+mW6z0GEhfXCic04JW+CmhqCb7+gxfFxkRBXlA03j/GlDZ/aMCXfz6caL003OjuCjIiKqKNs0mTwTVwt3deyWu9d0RAeDc0+XIPBe05Z2Ta6TEqNcuTpOjMLFSj12IcquEdzaocdTPC4lr5pJE3iyY3eb2FaCApVV73Xh62UsFFL7xi5U2bRbOKQnU4ak7AeNOiDkz86Fm/XmIQlZ65gu89xdCeuFVjZ2YWNpRMifXQhrzc30xoUm6q6z3Nyqs/fL4Fm5U4aE1L6xTchbe4RRzagsEE5yq2KnZkLoQ5Rqj88TqtVInhEG1krJctUYiPpMxPq4HTYLC9xjG9aujumRQ8ka6cNbwtRObANn0xjeECY8epYBvKac9feo0JAvya30ERjAy9gnvsH78JI5sD27frjvCcWZOyLi4b6xj6uuCeeAb8Ajsj2u+pwwtPvlpL43zYLDoohtdDMLhIw4da3GKmGNSb+QCbi+3uSs8Kw7PvnzQZcewD6MfwqMfUb+BxA3DWDBcrc5AAAAAElFTkSuQmCC">
+    
+      <img class="case_img" src="../gif-img/airpods-case.png" alt="">
+      <img class="airpods_img" src="../gif-img/airpods.png" alt="">
+
+      <label class="switch">
+        <input type="checkbox">
+        <span>
+            <em></em>
+            <strong></strong>
+        </span>
+    </label>
+    
+
+      <img class="apple_logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAABu0lEQVRIid3XsUsbYRjH8d+TRMRBpIJUDCp06NC1U9eC7SBSXJqpLo7+CSKu3SIUilI6dKkYaIf+AR3sUOngIgodFKFBUGOCi5JE/HbIBS5n7proY4b+trvn5f3cPffey53JKcAjSTlJ+2ZW8Jo3CUwDb4E6jSzdOxrAH2nN816gMxF0B7BewJsh9AJ42gs0E3quZ8CLe0cDOAUUgEVg1HvyEWAZ2AJOgN/AGvAsNGYYmAe+BvUysAe8AyZvg74CzonPAfALqCWMuQQWukFngeuECbvNdCdoFqg4op+Avk7gvCP6jZj32iKoSSpKGuvsoSSmLumxmR22K6Yix+NOqCT9iEPbwRNOqCTtJhWjcMYRTkwUPnWc+0lSMbq4HkgqO8FXkibN7KhdseWOzawi6Y8TnJGUjytGWy1J351gSXoNrAD/XjtAznEDaeYn8DDs3NhVgH412j3idt9SSVLWzGrNEzdabWZVSR8cUUlaDaOxAYaAY6c2nwDDHV8iMOcEv+m6P8DnO6JfukYDeIDWL8lwakARqMbUt4HBW8EB3k/jT6EEnAIbwEsgHdTTwBSwTmNdnAPv74T+l/kLe5e5AqrA3KkAAAAASUVORK5CYII=">
+      
+    </div>
+
+
+
+<!------------------End Modal Window----------------->
+
+
+<!--- cursore --->
+<div class="cursor cursor--large"></div>
+<div class="cursor cursor--small"></div>
+<!-----end cursore----->
+
+<div class="support">
+<a href="../welcome/welcome.html">	
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACnUlEQVRYhe2XPWgUQRTH/+OpwRDj14kfMUpAgsZEEBSUWFjkihBRq8OPxl5CMIUWQiqxEtsUAUEFP3qtbOw8IwTFpFFTaCIYFM+IiRrI/Sxu1hs2u5edNRwE8pp3t/Pef34zszNvVlqxZWCm1h0CGyWdkNQiacgY8zNoW51SMCupVdImSXWSipImJI0bY4iIr5OUl3RBUpekjG0ykm6lAWgHrgOvibci8Ag4A2SAdUA/8Cki9hXQ5gvRDNwF5qtARNl74G3o2QugF9iVZja6gGlHbBIYBE4CbUAWWAM0AYeBS8BjoBSCGAGOeQM4IHlgzop9Ay4DaxPk3YiYpVkglxakA5ixQuNAa8K8PgfgHXDRDiQA6vAFyQBjVmAq6foC+4FfNm8U2GKftztLPQxkFtNyRc87o+v2yHvoLGlLqO2co5n3gXlpk5555GSB3zZvICZmxLY/SSq6jcpOSDwCoMfmzFM+EKNiem3MDBB58q8K/e9U+VQsSXqaFEbSHusnjTFfY2LGrK+XtDUJzE7rvxhjih4wjdbPVYn57vxenwQmEJ32AJGkKeu3V9ktu63Hia8KE0Bs8IQpWN8g6XhMTI/1o26ljjXKx39gO3xonN1SoFyl3bYjwB/bfiWpYKOzRfs8YXJUiumwPVs6gavOoTcONPiIPrCJH4B6T6B+FhbJwD4DB330BBxyRnjTK1n/ZqjgQMwCd4AmX61AcNAKlYDTKTU2Ay3h9yeNUD3wxgIVcW5klAvpAHDtvzrxBNoH/LBAHynf+DLAPWcJ9tYSKOdsyTHgfuilPFAzGAt0lvj7b81hMsDzWsCEy8ECEEm3JR1dyk5TGTAUMyO1XyYql+koKwHNS9nfYp+3pyR1q/I56lrBGDOxlDArtizsLzir5FuvxxoUAAAAAElFTkSuQmCC">
+</a>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js'></script>
+<script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
+<script  src="home_script.js"></script>
+
+
+</body>
+</html>

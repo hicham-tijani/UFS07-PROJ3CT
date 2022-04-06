@@ -1,0 +1,68 @@
+body,
+html {
+  position: fixed;
+  top: -1%;
+  left: 38%;
+  height: 100%;
+  display: grid;
+  background: white;
+  background-color: rgb(177, 20, 20);
+  font-family: "Fredoka", sans-serif;
+}
+
+#container {
+  margin: auto;
+  padding: 1em 5em;
+  color: #f1f1f1;
+  --clay-background: #eee;
+  --clay-border-radius: 48px;
+  --clay-shadow-outset: 12px 12px 24px 0 rgba(0, 0, 0, 0.75);
+  --clay-shadow-inset-primary: -12px -12px 24px 0 rgba(0, 0, 0, 0.65);
+  --clay-shadow-inset-secondary: 12px 12px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+p {
+  margin: 1em 0 0.75em;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #bd8686;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons .clay {
+  padding: 1.25em 4.5em 1.5em;
+  --clay-background: rgb(0, 0, 0);
+  --clay-border-radius: 21px;
+  --clay-shadow-inset-secondary: 8px 8px 16px 0 rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.buttons .clay:hover {
+  transform: scale(1.025);
+  --clay-shadow-outset: 9px 9px 18px 0 #766f6f;
+}
+
+
+button {
+  margin: 0 0 1.25em;
+  background: transparent;
+  border: 0;
+  color: #000000;
+  cursor: pointer;
+}
+
+.exit{
+  position:relative;
+  left: 39%;
+}
