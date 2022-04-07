@@ -48,31 +48,6 @@
 <!--- Maps --->
 <div id="navigation" class="container">
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (p) {
-        var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
-        var mapOptions = {
-            center: LatLng,
-            zoom: 13,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
-        var marker = new google.maps.Marker({
-            position: LatLng,
-            map: map,
-            title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
-        });
-        google.maps.event.addListener(marker, "click", function (e) {
-            var infoWindow = new google.maps.InfoWindow();
-            infoWindow.setContent(marker.title);
-            infoWindow.open(map, marker);
-        });
-    });
-} else {
-    alert('Geo Location feature is not supported in this browser.');
-}
-</script>
 <div id="dvMap" class="dvMap">
 </div>
 </div>
@@ -267,7 +242,7 @@ if (navigator.geolocation) {
 <!-----end cursore----->
 
 <div class="support">
-<a href="../welcome/welcome.html">	
+<a href="../index.html">	
 	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAABmJLR0QA/wD/AP+gvaeTAAACnUlEQVRYhe2XPWgUQRTH/+OpwRDj14kfMUpAgsZEEBSUWFjkihBRq8OPxl5CMIUWQiqxEtsUAUEFP3qtbOw8IwTFpFFTaCIYFM+IiRrI/Sxu1hs2u5edNRwE8pp3t/Pef34zszNvVlqxZWCm1h0CGyWdkNQiacgY8zNoW51SMCupVdImSXWSipImJI0bY4iIr5OUl3RBUpekjG0ykm6lAWgHrgOvibci8Ag4A2SAdUA/8Cki9hXQ5gvRDNwF5qtARNl74G3o2QugF9iVZja6gGlHbBIYBE4CbUAWWAM0AYeBS8BjoBSCGAGOeQM4IHlgzop9Ay4DaxPk3YiYpVkglxakA5ixQuNAa8K8PgfgHXDRDiQA6vAFyQBjVmAq6foC+4FfNm8U2GKftztLPQxkFtNyRc87o+v2yHvoLGlLqO2co5n3gXlpk5555GSB3zZvICZmxLY/SSq6jcpOSDwCoMfmzFM+EKNiem3MDBB58q8K/e9U+VQsSXqaFEbSHusnjTFfY2LGrK+XtDUJzE7rvxhjih4wjdbPVYn57vxenwQmEJ32AJGkKeu3V9ktu63Hia8KE0Bs8IQpWN8g6XhMTI/1o26ljjXKx39gO3xonN1SoFyl3bYjwB/bfiWpYKOzRfs8YXJUiumwPVs6gavOoTcONPiIPrCJH4B6T6B+FhbJwD4DB330BBxyRnjTK1n/ZqjgQMwCd4AmX61AcNAKlYDTKTU2Ay3h9yeNUD3wxgIVcW5klAvpAHDtvzrxBNoH/LBAHynf+DLAPWcJ9tYSKOdsyTHgfuilPFAzGAt0lvj7b81hMsDzWsCEy8ECEEm3JR1dyk5TGTAUMyO1XyYql+koKwHNS9nfYp+3pyR1q/I56lrBGDOxlDArtizsLzir5FuvxxoUAAAAAElFTkSuQmCC">
 </a>
 </div>
