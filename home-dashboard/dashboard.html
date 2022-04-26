@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+  <link rel="stylesheet" href="./assets/css/cursor_style.css">
+  <link rel="stylesheet" href="../home-dashboard/assets/css/argon-dashboard.css">
+  <link rel="stylesheet" href="../home-dashboard/assets/scss/argon-dashboard.scss">
+  <link rel="stylesheet" href="../home-dashboard/assets/css/modal_style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"> </script>
+  
+  <script src="https://code.jquery.com/jquery-latest.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>            
+  
+
+  <title>
+   Dashboard
+  </title>
+  
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+  <!-- Nucleo Icons -->
+  <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link id="pagestyle" href="./assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href="#" target="_blank">
+        <img src="../home-dashboard/assets/img/icons8-apple-logo-200.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hicham.T </span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">MyDashboard</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="sidenav-footer mx-3 ">
+      <a class="btn btn-primary btn-sm mb-0 w-100" href="../index.html" type="button">Esc</a>
+    </div>
+  </aside>
+
+  <main class="main-content position-relative border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder text-white mb-0">UFS07</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            <div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" placeholder="Search...">
+            </div>
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="../login/registration/profile.html" class="nav-link text-white font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                  <i class="sidenav-toggler-line bg-white"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item px-0 d-flex align-items-center">
+              <a href="#open-modal-whr" class="nav-link text-white p-0">
+                <i class="fa fa-cloud fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item px-3 d-flex align-items-center">
+              <a href="#open-modal" class="nav-link text-white p-0">
+                <i class="fa fa-th-large  fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+            </li>
+            <li class="nav-item dropdown pe-2 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-bell cursor-pointer"></i>
+              </a>
+              <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        class="avatar avatar-sm  me-3 "
+                         width="60" height="60"
+                         viewBox="0 0 172 172"
+                         style=" fill:#000000;"><g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none" fill-rule="nonzero"></path><g><path d="M26.86124,165.11828c-3.45032,0 -6.68564,-1.3502 -9.11256,-3.8012c-3.21468,-3.26972 -4.4548,-8.0152 -3.25252,-12.40292l7.50436,-27.40304c-4.87964,-10.13768 -7.44244,-21.34864 -7.43556,-32.64044c0.0172,-41.41588 33.72232,-75.11068 75.13648,-75.11068c20.0896,0.00688 38.96316,7.83116 53.14972,22.02976c14.18656,14.20032 21.99364,33.07216 21.98676,53.13768c-0.01548,41.4176 -33.72232,75.1124 -75.13648,75.1124c-10.73968,-0.00344 -21.45872,-2.34092 -31.20596,-6.78196l-28.38172,7.44072c-0.95288,0.2666 -2.09152,0.41968 -3.25252,0.41968z" fill="#000000" fill-rule="nonzero" opacity="0.35"></path><path d="M23.42124,161.67828c-3.45032,0 -6.68564,-1.3502 -9.11256,-3.8012c-3.21468,-3.26972 -4.4548,-8.0152 -3.25252,-12.40292l7.50436,-27.40304c-4.87964,-10.13768 -7.44244,-21.34864 -7.43556,-32.64044c0.0172,-41.41588 33.72232,-75.11068 75.13648,-75.11068c20.0896,0.00688 38.96316,7.83116 53.14972,22.02976c14.18656,14.20032 21.99364,33.07216 21.98676,53.13768c-0.01548,41.4176 -33.72232,75.1124 -75.13648,75.1124c-10.73968,-0.00344 -21.45872,-2.34092 -31.20596,-6.78196l-28.38172,7.44072c-0.95288,0.2666 -2.09152,0.41968 -3.25252,0.41968z" fill="#f2f2f2" fill-rule="nonzero"></path><path d="M23.42124,150.49828c-0.43344,0 -0.85312,-0.17028 -1.16444,-0.48504c-0.41108,-0.41624 -0.57104,-1.0234 -0.41624,-1.58584l8.66192,-31.62736c-5.36984,-9.5374 -8.20268,-20.36824 -8.1958,-31.3642c0.01204,-35.25656 28.70164,-63.93584 63.95476,-63.93584c17.10024,0.00688 33.16676,6.66672 45.24116,18.75144c12.0744,12.08816 18.7222,28.15124 18.71532,45.23084c-0.01376,35.25312 -28.70508,63.93584 -63.95648,63.93584c-10.4662,-0.00344 -20.82232,-2.58688 -30.01228,-7.4734l-32.41168,8.4968c-0.1376,0.03956 -0.2752,0.05676 -0.41624,0.05676z" fill="#f2f2f2" fill-rule="nonzero"></path><path d="M23.42124,153.07828c-1.1352,0 -2.2016,-0.44376 -2.99968,-1.25044c-1.0578,-1.075 -1.46716,-2.63848 -1.07156,-4.08328l8.385,-30.616c-5.24944,-9.69048 -8.01692,-20.62452 -8.01004,-31.69444c0.01548,-36.67556 29.86264,-66.51412 66.53648,-66.51412c17.78824,0.00688 34.5032,6.93504 47.06608,19.50824c12.56288,12.57492 19.47728,29.28644 19.4704,47.05404c-0.01376,36.67728 -29.86092,66.51584 -66.53648,66.51584c-10.52812,-0.00344 -20.98916,-2.52668 -30.32188,-7.30484l-31.44676,8.24568c-0.31648,0.08772 -0.69144,0.13932 -1.07156,0.13932zM23.18044,147.94924c-0.01204,0.00344 -0.0258,0.00688 -0.03784,0.01032zM86.26144,24.08c-33.82896,0 -61.36272,27.52516 -61.37648,61.35756c-0.00516,10.54188 2.71416,20.9496 7.86384,30.09828c0.33368,0.59168 0.41968,1.29172 0.2408,1.94704l-8.23192,30.05356l30.83616,-8.08572c0.62608,-0.16512 1.29172,-0.086 1.86448,0.21844c8.81672,4.68872 18.77724,7.16724 28.80312,7.17068c33.82896,0 61.36272,-27.52516 61.37476,-61.35756c0.00688,-16.38988 -6.3726,-31.80624 -17.96024,-43.40592c-11.58592,-11.59968 -27.00572,-17.98948 -43.41452,-17.99636z" fill="#fca311" fill-rule="nonzero"></path><path d="M122.42444,49.31928c-9.65436,-9.66124 -22.48728,-14.98464 -36.1458,-14.98636c-28.1994,0 -51.13388,22.92416 -51.14592,51.10464c-0.00344,9.6578 2.69868,19.05932 7.8174,27.2018l1.21776,1.93328l-5.16688,18.85808l19.35172,-5.074l1.86964,1.10768c7.84664,4.65948 16.8474,7.1208 26.02188,7.12424h0.01892c28.17876,0 51.11324,-22.9276 51.12356,-51.1098c0.00172,-13.65508 -5.30792,-26.49832 -14.96228,-36.15956z" fill="#14213d" fill-rule="nonzero"></path><g fill="#f2f2f2" fill-rule="evenodd"><path d="M70.68512,59.3916c-1.16444,-2.59204 -2.39252,-2.64536 -3.50536,-2.6918c-0.90988,-0.03956 -1.94704,-0.03612 -2.9842,-0.03612c-1.03716,0 -2.72448,0.39044 -4.15208,1.94876c-1.4276,1.55832 -5.4524,5.3234 -5.4524,12.98428c0,7.66088 5.57968,15.06548 6.35712,16.10264c0.77744,1.03716 10.77236,17.2602 26.59808,23.5038c13.15112,5.1858 15.82916,4.15552 18.68608,3.8958c2.8552,-0.25972 9.21232,-3.76508 10.5092,-7.40116c1.29688,-3.63608 1.29688,-6.751 0.90988,-7.40116c-0.39044,-0.65016 -1.4276,-1.03716 -2.9842,-1.81804c-1.55488,-0.78088 -9.21232,-4.54596 -10.63992,-5.06368c-1.4276,-0.51772 -2.46476,-0.77744 -3.50536,0.78088c-1.03716,1.55488 -4.02136,5.06368 -4.92952,6.10084c-0.90988,1.0406 -1.81804,1.17132 -3.37464,0.39044c-1.5566,-0.78088 -6.5704,-2.42176 -12.5216,-7.72624c-4.62852,-4.12628 -7.75204,-9.22264 -8.66192,-10.78268c-0.90988,-1.55488 -0.09804,-2.3994 0.68284,-3.17684c0.69832,-0.69832 1.5566,-1.81804 2.33748,-2.72792c0.77744,-0.90988 1.03716,-1.55832 1.55488,-2.59548c0.51944,-1.0406 0.25972,-1.94876 -0.13072,-2.72792c-0.38356,-0.77916 -3.40904,-8.4796 -4.79364,-11.5584z"></path></g></g></g></svg>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Nuovo messaggio da Laura</span> 
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          13 minutes fa
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="mb-2">
+                  <a class="dropdown-item border-radius-md" href="javascript:;">
+                    <div class="d-flex py-1">
+                      <div class="my-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                        class="avatar avatar-sm  me-3 "
+                        width="60" height="60"
+                        viewBox="0 0 172 172"
+                        style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><circle cx="52" cy="52" transform="scale(1.72,1.72)" r="44" fill="#000000" opacity="0.35"></circle><circle cx="50" cy="50" transform="scale(1.72,1.72)" r="44" fill="#f2f2f2"></circle><path d="M86,21.5c-35.72268,0 -64.5,28.77732 -64.5,64.5c0,35.72268 28.77732,64.5 64.5,64.5c35.72096,0 64.5,-28.77732 64.5,-64.5c0,-35.72268 -28.77904,-64.5 -64.5,-64.5z" fill="#14213d"></path><path d="M86,153.08c-36.9886,0 -67.08,-30.0914 -67.08,-67.08c0,-36.9886 30.0914,-67.08 67.08,-67.08c36.9886,0 67.08,30.0914 67.08,67.08c0,36.9886 -30.0914,67.08 -67.08,67.08zM86,24.08c-34.14372,0 -61.92,27.77628 -61.92,61.92c0,34.14372 27.77628,61.92 61.92,61.92c34.14372,0 61.92,-27.77628 61.92,-61.92c0,-34.14372 -27.77628,-61.92 -61.92,-61.92z" fill="#fca311"></path><g fill="#f2f2f2"><path d="M110.98128,117.97652c-0.94256,0 -1.88684,-0.46784 -2.82768,-0.94256c-8.95604,-5.18236 -19.79892,-8.01176 -31.5792,-8.01176c-6.60136,0 -13.19928,0.93912 -19.32764,2.35468c-0.94256,0 -2.35812,0.47128 -2.82768,0.47128c-2.35812,0 -3.77024,-1.89028 -3.77024,-3.77368c0,-2.35468 1.41212,-3.77368 3.29896,-4.23808c7.54048,-1.89028 15.08268,-2.82768 23.09444,-2.82768c13.19928,0 25.45428,3.29208 35.82244,9.42904c1.41212,0.93912 2.35812,1.8834 2.35812,4.23808c-0.47128,1.89028 -2.35812,3.30068 -4.24152,3.30068zM117.5792,101.94784c-1.41212,0 -2.35468,-0.4644 -3.29896,-0.93912c-9.89516,-6.12664 -23.56916,-9.90376 -39.11968,-9.90376c-7.54392,0 -14.61312,0.94428 -19.79892,2.36328c-1.41556,0.4644 -1.88684,0.4644 -2.82768,0.4644c-2.82768,0 -4.71452,-2.35468 -4.71452,-4.71108c0,-2.82768 1.41556,-4.24324 3.77024,-5.18236c7.0692,-1.8834 14.14184,-3.29896 24.03872,-3.29896c16.02868,0 31.58264,3.77368 43.83764,11.31072c1.8834,0.93912 2.82768,2.82768 2.82768,4.71108c0,2.83112 -1.88684,5.1858 -4.71452,5.1858zM125.12312,83.10008c-1.41212,0 -1.88684,-0.47128 -3.29896,-0.93912c-11.31244,-6.60136 -28.28024,-10.37504 -44.77848,-10.37504c-8.48476,0 -16.96952,0.94428 -24.51,2.82768c-0.94428,0 -1.88684,0.47128 -3.29896,0.47128c-3.29896,0.47128 -5.65708,-2.35468 -5.65708,-5.65708c0,-3.29896 1.88684,-5.18236 4.24152,-5.65708c8.95604,-2.82768 18.38164,-3.77368 29.22452,-3.77368c17.91208,0 36.765,3.77368 50.90684,11.78372c1.8834,0.94428 3.29552,2.82768 3.29552,5.65708c-0.46956,3.3024 -2.8294,5.66224 -6.12492,5.66224z"></path></g></g></g></svg>
+                      </div>
+                      <div class="d-flex flex-column justify-content-center">
+                        <h6 class="text-sm font-weight-normal mb-1">
+                          <span class="font-weight-bold">Nuovo album di Travis Scott</span> 
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          1 giorno fa
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <li class="mb-2">
+                    <a class="dropdown-item border-radius-md" href="javascript:;">
+                      <div class="d-flex py-1">
+                        <div class="my-auto">
+                          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                          class="avatar avatar-sm  me-3 "
+                          width="60" height="60"
+                          viewBox="0 0 172 172"
+                          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M58.27188,161.68c-8.06336,0 -14.62344,-6.56008 -14.62344,-14.62516c0,-0.7052 0.06192,-1.41556 0.18404,-2.11904c0.03784,-0.30272 0.08944,-0.602 0.15308,-0.89612l1.40352,-6.43968h-13.47104c-8.02896,0 -14.56152,-6.5188 -14.56152,-14.53056c0,-0.70004 0.06192,-1.40868 0.18404,-2.11388c0.03956,-0.31476 0.0946,-0.62608 0.1634,-0.93396l19.90556,-91.4008c0.10664,-0.4816 0.23736,-0.93224 0.39044,-1.36396c1.95392,-6.0286 7.45276,-10.05684 13.77892,-10.05684h45.39596c13.59144,0 29.57196,7.32548 35.66764,23.25784c8.62408,1.89716 16.25228,6.45516 21.49828,12.97912c4.98628,6.19888 10.191,17.05724 6.665,33.57956c-5.2288,24.46012 -25.34764,40.26348 -51.25256,40.26348h-7.60584l-4.90028,22.78312c-0.14276,0.65532 -0.33884,1.28484 -0.58652,1.89028c-1.86448,5.23912 -6.48612,8.94056 -11.98324,9.59244c-0.56588,0.08944 -1.13864,0.13416 -1.70968,0.13416z" fill="#000000" opacity="0.35"></path><path d="M54.83188,158.24c-8.06336,0 -14.62344,-6.56008 -14.62344,-14.62516c0,-0.7052 0.06192,-1.41556 0.18404,-2.11904c0.03784,-0.30272 0.08944,-0.602 0.15308,-0.89612l1.40352,-6.43968h-13.47104c-8.02896,0 -14.56152,-6.5188 -14.56152,-14.53056c0,-0.70004 0.06192,-1.40868 0.18404,-2.11388c0.03956,-0.31476 0.0946,-0.62608 0.1634,-0.93396l19.90556,-91.4008c0.10664,-0.4816 0.23736,-0.93224 0.39044,-1.36396c1.95392,-6.0286 7.45276,-10.05684 13.77892,-10.05684h45.39596c13.59144,0 29.57196,7.32548 35.66764,23.25784c8.62408,1.89716 16.25228,6.45516 21.49828,12.97912c4.98628,6.19888 10.191,17.05724 6.665,33.57956c-5.2288,24.46012 -25.34764,40.26348 -51.25256,40.26348h-7.60584l-4.90028,22.78312c-0.14276,0.65532 -0.33884,1.28484 -0.58652,1.89028c-1.86448,5.23912 -6.48612,8.94056 -11.98324,9.59244c-0.56588,0.08944 -1.13864,0.13416 -1.70968,0.13416z" fill="#f2f2f2"></path><path d="M77.71992,52.16244l42.59752,-0.81872c0.06364,-0.0688 0.28896,-2.43208 0.3526,-2.49916c-1.06468,-16.33312 -14.80748,-23.90456 -26.9352,-23.90456h-45.39596c-1.60304,0 -2.881,1.13176 -3.22844,2.62644l-0.0172,-0.00688l-19.909,91.41112l0.04472,0.00344c-0.04816,0.21672 -0.13244,0.42312 -0.13244,0.65532c0,1.86964 1.51188,3.35056 3.38152,3.35056h29.81964l7.26356,-33.54c0,0 10.56768,-37.27756 12.15868,-37.27756z" fill="#14213d"></path><path d="M120.55824,47.17444c0.18232,3.02376 -0.0172,6.3124 -0.7912,9.94676c-4.4204,20.68988 -20.40264,31.4588 -40.15512,31.4588c0,0 -8.31964,-4.92264 -11.2144,-4.92264c-1.7888,0 -2.34264,3.51396 -2.7262,5.34232l-7.37364,34.51008l-6.8198,19.43256l0.04472,0.00344c-0.04816,0.22016 -0.13416,0.43 -0.13416,0.66908c0,1.90404 1.5394,3.44516 3.44516,3.44516h24.69576l0.04472,-0.0344c1.61852,-0.02408 2.90508,-1.17992 3.24048,-2.70212l0.06192,-0.0516l6.21264,-28.85816c0,0 0.43172,-2.75372 3.32648,-2.75372c2.89476,0 13.8976,0 13.8976,0c19.75248,0 35.89812,-10.71904 40.32196,-31.41408c4.97596,-23.3318 -11.66676,-33.98548 -26.07692,-34.07148z" fill="#ffffff"></path><path d="M119.79972,57.6372c-6.2866,35.9652 -54.18516,33.67072 -54.09572,30.88432c0.07912,-2.48368 7.525,-36.20256 7.525,-36.20256l0.01548,0.00688c0.33712,-1.43448 1.56004,-2.48884 3.09084,-2.48884h44.17476c0.03612,-0.03956 0.06536,-0.07052 0.0946,-0.10148c0.0258,2.44412 -0.3096,5.0654 -0.80496,7.90168z" fill="#34495e"></path><path d="M79.52764,149.64h-24.69576c-3.32132,0 -6.02344,-2.70212 -6.02344,-6.02516c0,-0.33196 0.04472,-0.61748 0.09632,-0.84108c0.0086,-0.12728 0.0258,-0.25284 0.0516,-0.3784l3.66876,-16.83536h-24.14708c-3.28692,0 -5.96152,-2.66084 -5.96152,-5.93056c0,-0.33196 0.04644,-0.61748 0.09804,-0.84108c0.00688,-0.12212 0.02408,-0.24596 0.04988,-0.36636l19.909,-91.41112c0.03268,-0.14276 0.07396,-0.28208 0.12728,-0.41452c0.75852,-2.51292 3.02376,-4.23636 5.63816,-4.23636h45.39596c12.23264,0 25.97716,7.009 28.96652,22.31528c8.59656,0.60372 16.51716,4.51672 21.49828,10.71044c3.8184,4.7472 7.77612,13.18036 4.95704,26.40028c-4.41352,20.63484 -20.83092,33.454 -42.8452,33.454h-13.89588c-0.4558,0 -0.71724,0.19264 -0.77744,0.57276l-6.24016,29.00092c-0.04472,0.20812 -0.11352,0.40592 -0.2064,0.59512c-0.73272,2.32372 -2.75888,3.96976 -5.16,4.17616c-0.16684,0.03612 -0.33712,0.05504 -0.50396,0.05504zM53.97876,143.75244c0.06708,0.41108 0.42312,0.72756 0.85312,0.72756h24.3466c0.11868,-0.02064 0.23736,-0.03268 0.35432,-0.0344c0.45408,-0.00688 0.69316,-0.3698 0.76024,-0.6794c0.03612,-0.16168 0.08772,-0.31992 0.15308,-0.46956l6.11976,-28.42644c0.24252,-1.56348 1.8146,-4.7902 5.848,-4.7902h13.89588c19.737,0 33.8668,-10.98048 37.80044,-29.37244c1.89716,-8.8924 0.53664,-16.53092 -3.93192,-22.08996c-4.05748,-5.04476 -10.56424,-8.24912 -17.6816,-8.78404c-0.43516,0.47988 -1.0492,0.79808 -1.7458,0.8428c-1.40868,0.08256 -2.60924,-0.94944 -2.73652,-2.34092c-1.2986,-14.3018 -13.49512,-20.81544 -24.27952,-20.81544h-45.39596c-0.41968,0 -0.64844,0.34056 -0.71552,0.63124c-0.02064,0.08772 -0.04472,0.17372 -0.07396,0.25628l-19.74388,90.65948c-0.00516,0.15136 -0.02236,0.30444 -0.05504,0.4558c-0.01892,0.08428 -0.03784,0.16684 -0.0602,0.2494c0.06708,0.3612 0.387,0.6278 0.78776,0.6278h27.34972c0.78088,0 1.52048,0.3526 2.00896,0.96148c0.4902,0.60888 0.6794,1.40524 0.51256,2.16892l-4.25012,19.5048c-0.00516,0.15824 -0.02408,0.31648 -0.05676,0.47128z" fill="#fca311"></path></g></g></svg>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="text-sm font-weight-normal mb-1">
+                            <span class="font-weight-bold">Pagamento effettuato con successo</span> 
+                          </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          <i class="fa fa-clock me-1"></i>
+                          2 giorni fa 
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<br>
+    <div style="height:100px; background-color: #FFFFFF; overflow:hidden; 
+    box-sizing: border-box; border: 1px solid #56667F; 
+    border-radius: 4px; text-align: right; line-height:14px; 
+    block-size:62px; font-size: 12px; font-feature-settings: normal; 
+    text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #14213d;padding:1px;padding: 0px; margin: 0px;
+     width: 100%;"><div style="height:40px; padding:0px; margin:0px; width: 100%;">
+     <iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=no" width="100%" height="36px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 60%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+      </div></div>
+
+
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card z-index-2 h-100">
+            <div class="card-header pb-0 pt-3 bg-transparent">
+              <h6 class="text-capitalize">Sales overview</h6>
+              <p class="text-sm mb-0">
+                <i class="fa fa-arrow-up text-success"></i>
+                <span class="font-weight-bold">4% more</span> in 2022
+              </p>
+            </div>
+            <div class="card-body p-3">
+              <div class="chart">
+                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-5">
+          <div class="card card-carousel overflow-hidden h-100 p-0">
+            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+              <div class="carousel-inner border-radius-lg h-100">
+                <div class="carousel-item h-100 active" style="background-image: url('./assets/img/Apollo\ 365°\ Part\ 1\ -\ Severino\ Canepa.png');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('./assets/img/Apollo\ 365°\ Part\ 1\ -\ Severino\ Canepa.jfif');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                    </div>   
+                  </div>
+                </div>
+                <div class="carousel-item h-100" style="background-image: url('./assets/img/DAVID-4.jfif');
+                background-size: cover;">
+                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                              </div>   
+                            </div>
+                          </div>
+                <div class="carousel-item h-100" style="background-image: url('./assets/img/D\ A\ V\ I\ D.jfif');
+      background-size: cover;">
+                  <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                    <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                      <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                    </div>    
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next w-5 me-3" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-lg-7 mb-lg-0 mb-4">
+          <div class="card ">
+            <div class="card-header pb-0 p-3">
+              <div class="d-flex justify-content-between">
+                <h4 class="mb-2">Music playlist</h4>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center ">
+                <tbody>
+                <td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<iframe  style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX6wfQutivYYr?utm_source=generator" width="97%" height="390" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1EQnqst5TRi17F?utm_source=generator" width="97%" height="390" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX10zKzsJ2jva?utm_source=generator" width="97%" height="390" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX1lVhptIYRda?utm_source=generator" width="97%" height="390" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+               </td>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+     
+
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="card-header pb-0 p-3">
+              <h4 class="mb-0">Calendar</h4>
+            </div>  
+             <div class="calendar"></div>
+    </div>
+
+<!---------------------------Application--------------------------->
+
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">
+      <img class="close" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVRIid2VTWsTURSGnzPTZGJF0katQhtt2uJKBEFw4TfizoUSVHDjBwiCrty4ElyJP8CFoATBnbXgwo1uTJVIoa7cWdImmlq/6miLhLQzc4+bxjbJjK1117M63Hve89x3OHcurJWQ5QpSA4d7xA/OinAQtB+xNqiqK/Be4HlgyRN3/GVlVZCuzN4tgTq3RPQcYP+lh4dy37aDm1/GX39dMWRz3/79qjIIbP3bCRs7yUdFTn6fGB5dFtLVf2CfMTwD1q8YsBhVxByanii8iYRsHTiw2Q94y784aA6Rj22W7v5cfPWtvmQt3fd8uf1fAADV7iCQmw3cepLqP5i2jI4DsWZdMhFQ8y3m/EXjiZgStw2ztdCZ8Ixt97nF/GSDE8twJgzQsS5g9NoY+atFupMeAN1JjxdXioxeGyOZCMIgMTsITv7pvcTnobDqmm/xvdpGJjXH0MUSe9JVhi6WyKTmcKtt1HwrTIYix0Ig7AiFeEI210vJdejtnOfppQl6O+ep/Ixz+sH2hk/YhNnWChGJHNmp2RhXh3pQXZArXB5MU/kZj5KAyKZWiOqvqPrupMed7CQidT3cPfWBdMd8NASdaYVAMaw0EVMeXyiTSc1R/hHn+L0+yj/ipDs8Hp1/TyKmEYzFfksgkg+rdWzDxnafkuuQzWV4U2knm8tQch02tvs4tolwIi//ZPUkNXC4xwqCCf7hnji2YSb8nvj4Zvt0pTDV4MQt5idV5WGYYqZmt0xRzZMoACC5OqABAuDEreugXyKUK40p2/JvLF1ogEyN5aeN6gmgukrAL6Mm2/yutFxXt1wYMWqOrsLRJ6PmmFsujDRvhP4T3HJhJB5r26kqOcBbprkH3I/H7F1hAFjhG28Z/zQqR4B+wFlo/A7RYSPW4HJv/NqJ3zsJFUR4GzKjAAAAAElFTkSuQmCC">
+      </a>
+   
+<a href="https://www.instagram.com/"><img src="data:image/png;base64,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"></a>
+&nbsp;
+<a href="https://it-it.facebook.com/"><img src="data:image/png;base64,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"></a>
+&nbsp;
+<a href="https://twitter.com/?lang=it"><img src="data:image/png;base64,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"></a>
+&nbsp;  
+<a href="https://www.linkedin.com/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="60" height="60"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M40.42,159.96c-11.85596,0 -21.5,-9.64404 -21.5,-21.5v-98.04c0,-11.85596 9.64404,-21.5 21.5,-21.5h98.04c11.85596,0 21.5,9.64404 21.5,21.5v98.04c0,11.85596 -9.64404,21.5 -21.5,21.5z" fill="#000000" opacity="0.35"></path><path d="M36.98,156.52c-11.85596,0 -21.5,-9.64404 -21.5,-21.5v-98.04c0,-11.85596 9.64404,-21.5 21.5,-21.5h98.04c11.85596,0 21.5,9.64404 21.5,21.5v98.04c0,11.85596 -9.64404,21.5 -21.5,21.5z" fill="#f2f2f2"></path><path d="M26.66,135.02v-98.04c0,-5.70008 4.61992,-10.32 10.32,-10.32h98.04c5.70008,0 10.32,4.61992 10.32,10.32v98.04c0,5.70008 -4.61992,10.32 -10.32,10.32h-98.04c-5.70008,0 -10.32,-4.61992 -10.32,-10.32z" fill="#14213d"></path><path d="M135.02,147.92h-98.04c-7.11392,0 -12.9,-5.78608 -12.9,-12.9v-98.04c0,-7.11392 5.78608,-12.9 12.9,-12.9h98.04c7.11392,0 12.9,5.78608 12.9,12.9v98.04c0,7.11392 -5.78608,12.9 -12.9,12.9zM36.98,29.24c-4.26732,0 -7.74,3.47268 -7.74,7.74v98.04c0,4.26732 3.47268,7.74 7.74,7.74h98.04c4.26732,0 7.74,-3.47268 7.74,-7.74v-98.04c0,-4.26732 -3.47268,-7.74 -7.74,-7.74z" fill="#fca311"></path><rect x="29" y="41" transform="scale(1.72,1.72)" width="9" height="30" fill="#f2f2f2"></rect><path d="M57.59248,65.36h-0.08428c-4.4548,0 -7.3358,-3.3196 -7.3358,-7.46652c0,-4.23636 2.97044,-7.46136 7.50608,-7.46136c4.5408,0 7.33924,3.225 7.4218,7.46136c0,4.14348 -2.881,7.46652 -7.5078,7.46652z" fill="#f2f2f2"></path><g fill="#f2f2f2"><path d="M122.1028,122.12h-15.01388v-27.94656c0,-6.59964 -3.67908,-11.10432 -9.58556,-11.10432c-4.5064,0 -6.94536,3.03924 -8.12872,5.97528c-0.43172,1.05092 -0.30272,3.95772 -0.30272,5.4266v27.649h-15.01388v-51.67224h15.01388v7.85524c2.16548,-3.35056 5.5556,-7.85524 14.22784,-7.85524c10.74484,0 18.80132,6.75616 18.80132,21.84228l0.00172,29.82996z"></path></g></g></g></svg></a>
+<br>
+<hr>
+<a href="https://github.com/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="60" height="60"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><circle cx="52" cy="52" transform="scale(1.72,1.72)" r="44" fill="#000000" opacity="0.35"></circle><circle cx="50" cy="50" transform="scale(1.72,1.72)" r="44" fill="#f2f2f2"></circle><path d="M86,21.5c-35.62292,0 -64.5,28.87708 -64.5,64.5c0,35.62292 28.87708,64.5 64.5,64.5c35.62292,0 64.5,-28.87708 64.5,-64.5c0,-35.62292 -28.87708,-64.5 -64.5,-64.5z" fill="#14213d"></path><path d="M103.47692,144.36992c0,-1.92984 0.07224,-8.27836 0.07224,-16.14908c0,-5.49024 -1.8834,-9.08332 -3.99728,-10.90136c13.11328,-1.45684 26.87672,-6.4328 26.87672,-29.04736c0,-6.42592 -2.27728,-11.68052 -6.05096,-15.79648c0.60544,-1.48952 2.62644,-7.47512 -0.58652,-15.57804c0,0 -4.93296,-1.5824 -16.17144,6.03376c-4.70248,-1.30548 -9.73864,-1.95908 -14.73696,-1.98144c-5.0052,0.02236 -10.04136,0.67596 -14.73696,1.98144c-11.24536,-7.61788 -16.18692,-6.03376 -16.18692,-6.03376c-3.20264,8.10464 -1.18164,14.09024 -0.57792,15.57804c-3.76508,4.11596 -6.05956,9.37056 -6.05956,15.79648c0,22.5578 13.7428,27.60772 26.81308,29.0938c-1.68216,1.47232 -3.20264,4.06608 -3.73756,7.869c-3.354,1.50672 -11.88004,4.10392 -17.1312,-4.89168c0,0 -3.10976,-5.6502 -9.01624,-6.06644c0,0 -5.74824,-0.07396 -0.4042,3.5776c0,0 3.85968,1.81116 6.536,8.61032c0,0 3.45548,11.44832 19.82988,7.89136c0.02924,4.91232 0.07912,8.61376 0.07912,10.01212c0,0.6622 -0.20984,1.36224 -0.65876,1.9178c5.39392,2.13624 11.16452,3.354 17.19656,3.354c5.12732,0 10.06716,-0.87548 14.75072,-2.43724c-1.51532,-0.36636 -2.10184,-1.6684 -2.10184,-2.83284z" fill="#f2f2f2"></path><path d="M86,153.08c-36.9886,0 -67.08,-30.0914 -67.08,-67.08c0,-36.9886 30.0914,-67.08 67.08,-67.08c36.9886,0 67.08,30.0914 67.08,67.08c0,36.9886 -30.0914,67.08 -67.08,67.08zM86,24.08c-34.14372,0 -61.92,27.77628 -61.92,61.92c0,34.14372 27.77628,61.92 61.92,61.92c34.14372,0 61.92,-27.77628 61.92,-61.92c0,-34.14372 -27.77628,-61.92 -61.92,-61.92z" fill="#fca311"></path></g></g></svg></a>
+&nbsp;  
+<a href="https://www.pinterest.it/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="60" height="60"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><g fill="#000000" opacity="0.35"><circle cx="52" cy="52" transform="scale(1.72,1.72)" r="44"></circle><path d="M89.44,156.52c-36.9886,0 -67.08,-30.0914 -67.08,-67.08c0,-36.9886 30.0914,-67.08 67.08,-67.08c36.9886,0 67.08,30.0914 67.08,67.08c0,36.9886 -30.0914,67.08 -67.08,67.08z"></path></g><circle cx="50" cy="50" transform="scale(1.72,1.72)" r="44" fill="#f2f2f2"></circle><path d="M86,153.08c-36.9886,0 -67.08,-30.0914 -67.08,-67.08c0,-36.9886 30.0914,-67.08 67.08,-67.08c36.9886,0 67.08,30.0914 67.08,67.08c0,36.9886 -30.0914,67.08 -67.08,67.08z" fill="#fca311"></path><circle cx="50" cy="50" transform="scale(1.72,1.72)" r="37.5" fill="#14213d"></circle><path d="M87.43104,45.4166c-27.83992,0 -42.61988,18.6878 -42.61988,39.03196c0,9.46172 5.03616,21.23856 13.09264,24.98816c1.2212,0.5676 1.8748,0.32336 2.15516,-0.86c0.215,-0.89784 1.30204,-5.27868 1.79052,-7.31516c0.15652,-0.65016 0.07912,-1.20744 -0.4472,-1.849c-2.66772,-3.23532 -4.80052,-9.17792 -4.80052,-14.72148c0,-14.22784 10.77064,-27.993 29.12132,-27.993c15.84464,0 26.93864,10.79816 26.93864,26.24204c0,17.44768 -8.81156,29.53584 -20.27536,29.53584c-6.33132,0 -11.07164,-5.2374 -9.55116,-11.65988c1.8232,-7.66604 5.34404,-15.9358 5.34404,-21.4742c0,-4.95188 -2.65396,-9.08504 -8.15968,-9.08504c-6.47236,0 -11.6702,6.69252 -11.6702,15.66404c0,5.70868 1.92984,9.57352 1.92984,9.57352c0,0 -6.39324,27.0298 -7.56456,32.0608c-1.29688,5.55388 -0.7912,13.35752 -0.23048,18.45732v0c1.45512,0.57104 2.91024,1.14036 4.41352,1.60648v0c2.63504,-4.2828 6.56352,-11.30556 8.01864,-16.90588c0.78604,-3.0186 4.02136,-15.3338 4.02136,-15.3338c2.10184,4.01104 8.24396,7.40804 14.77996,7.40804c19.45148,0 33.4712,-17.88972 33.4712,-40.119c0.00688,-21.3108 -17.3806,-37.25176 -39.7578,-37.25176z" fill="#f2f2f2"></path><g fill="#fca311"><path d="M86,153.08c-36.9886,0 -67.08,-30.0914 -67.08,-67.08c0,-36.9886 30.0914,-67.08 67.08,-67.08c36.9886,0 67.08,30.0914 67.08,67.08c0,36.9886 -30.0914,67.08 -67.08,67.08zM86,24.08c-34.14372,0 -61.92,27.77628 -61.92,61.92c0,34.14372 27.77628,61.92 61.92,61.92c34.14372,0 61.92,-27.77628 61.92,-61.92c0,-34.14372 -27.77628,-61.92 -61.92,-61.92z"></path></g></g></g></svg></a>
+&nbsp; 
+<a href="https://web.whatsapp.com/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="60" height="60"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none" fill-rule="nonzero"></path><g><path d="M26.86124,165.11828c-3.45032,0 -6.68564,-1.3502 -9.11256,-3.8012c-3.21468,-3.26972 -4.4548,-8.0152 -3.25252,-12.40292l7.50436,-27.40304c-4.87964,-10.13768 -7.44244,-21.34864 -7.43556,-32.64044c0.0172,-41.41588 33.72232,-75.11068 75.13648,-75.11068c20.0896,0.00688 38.96316,7.83116 53.14972,22.02976c14.18656,14.20032 21.99364,33.07216 21.98676,53.13768c-0.01548,41.4176 -33.72232,75.1124 -75.13648,75.1124c-10.73968,-0.00344 -21.45872,-2.34092 -31.20596,-6.78196l-28.38172,7.44072c-0.95288,0.2666 -2.09152,0.41968 -3.25252,0.41968z" fill="#000000" fill-rule="nonzero" opacity="0.35"></path><path d="M23.42124,161.67828c-3.45032,0 -6.68564,-1.3502 -9.11256,-3.8012c-3.21468,-3.26972 -4.4548,-8.0152 -3.25252,-12.40292l7.50436,-27.40304c-4.87964,-10.13768 -7.44244,-21.34864 -7.43556,-32.64044c0.0172,-41.41588 33.72232,-75.11068 75.13648,-75.11068c20.0896,0.00688 38.96316,7.83116 53.14972,22.02976c14.18656,14.20032 21.99364,33.07216 21.98676,53.13768c-0.01548,41.4176 -33.72232,75.1124 -75.13648,75.1124c-10.73968,-0.00344 -21.45872,-2.34092 -31.20596,-6.78196l-28.38172,7.44072c-0.95288,0.2666 -2.09152,0.41968 -3.25252,0.41968z" fill="#f2f2f2" fill-rule="nonzero"></path><path d="M23.42124,150.49828c-0.43344,0 -0.85312,-0.17028 -1.16444,-0.48504c-0.41108,-0.41624 -0.57104,-1.0234 -0.41624,-1.58584l8.66192,-31.62736c-5.36984,-9.5374 -8.20268,-20.36824 -8.1958,-31.3642c0.01204,-35.25656 28.70164,-63.93584 63.95476,-63.93584c17.10024,0.00688 33.16676,6.66672 45.24116,18.75144c12.0744,12.08816 18.7222,28.15124 18.71532,45.23084c-0.01376,35.25312 -28.70508,63.93584 -63.95648,63.93584c-10.4662,-0.00344 -20.82232,-2.58688 -30.01228,-7.4734l-32.41168,8.4968c-0.1376,0.03956 -0.2752,0.05676 -0.41624,0.05676z" fill="#f2f2f2" fill-rule="nonzero"></path><path d="M23.42124,153.07828c-1.1352,0 -2.2016,-0.44376 -2.99968,-1.25044c-1.0578,-1.075 -1.46716,-2.63848 -1.07156,-4.08328l8.385,-30.616c-5.24944,-9.69048 -8.01692,-20.62452 -8.01004,-31.69444c0.01548,-36.67556 29.86264,-66.51412 66.53648,-66.51412c17.78824,0.00688 34.5032,6.93504 47.06608,19.50824c12.56288,12.57492 19.47728,29.28644 19.4704,47.05404c-0.01376,36.67728 -29.86092,66.51584 -66.53648,66.51584c-10.52812,-0.00344 -20.98916,-2.52668 -30.32188,-7.30484l-31.44676,8.24568c-0.31648,0.08772 -0.69144,0.13932 -1.07156,0.13932zM23.18044,147.94924c-0.01204,0.00344 -0.0258,0.00688 -0.03784,0.01032zM86.26144,24.08c-33.82896,0 -61.36272,27.52516 -61.37648,61.35756c-0.00516,10.54188 2.71416,20.9496 7.86384,30.09828c0.33368,0.59168 0.41968,1.29172 0.2408,1.94704l-8.23192,30.05356l30.83616,-8.08572c0.62608,-0.16512 1.29172,-0.086 1.86448,0.21844c8.81672,4.68872 18.77724,7.16724 28.80312,7.17068c33.82896,0 61.36272,-27.52516 61.37476,-61.35756c0.00688,-16.38988 -6.3726,-31.80624 -17.96024,-43.40592c-11.58592,-11.59968 -27.00572,-17.98948 -43.41452,-17.99636z" fill="#fca311" fill-rule="nonzero"></path><path d="M122.42444,49.31928c-9.65436,-9.66124 -22.48728,-14.98464 -36.1458,-14.98636c-28.1994,0 -51.13388,22.92416 -51.14592,51.10464c-0.00344,9.6578 2.69868,19.05932 7.8174,27.2018l1.21776,1.93328l-5.16688,18.85808l19.35172,-5.074l1.86964,1.10768c7.84664,4.65948 16.8474,7.1208 26.02188,7.12424h0.01892c28.17876,0 51.11324,-22.9276 51.12356,-51.1098c0.00172,-13.65508 -5.30792,-26.49832 -14.96228,-36.15956z" fill="#14213d" fill-rule="nonzero"></path><g fill="#f2f2f2" fill-rule="evenodd"><path d="M70.68512,59.3916c-1.16444,-2.59204 -2.39252,-2.64536 -3.50536,-2.6918c-0.90988,-0.03956 -1.94704,-0.03612 -2.9842,-0.03612c-1.03716,0 -2.72448,0.39044 -4.15208,1.94876c-1.4276,1.55832 -5.4524,5.3234 -5.4524,12.98428c0,7.66088 5.57968,15.06548 6.35712,16.10264c0.77744,1.03716 10.77236,17.2602 26.59808,23.5038c13.15112,5.1858 15.82916,4.15552 18.68608,3.8958c2.8552,-0.25972 9.21232,-3.76508 10.5092,-7.40116c1.29688,-3.63608 1.29688,-6.751 0.90988,-7.40116c-0.39044,-0.65016 -1.4276,-1.03716 -2.9842,-1.81804c-1.55488,-0.78088 -9.21232,-4.54596 -10.63992,-5.06368c-1.4276,-0.51772 -2.46476,-0.77744 -3.50536,0.78088c-1.03716,1.55488 -4.02136,5.06368 -4.92952,6.10084c-0.90988,1.0406 -1.81804,1.17132 -3.37464,0.39044c-1.5566,-0.78088 -6.5704,-2.42176 -12.5216,-7.72624c-4.62852,-4.12628 -7.75204,-9.22264 -8.66192,-10.78268c-0.90988,-1.55488 -0.09804,-2.3994 0.68284,-3.17684c0.69832,-0.69832 1.5566,-1.81804 2.33748,-2.72792c0.77744,-0.90988 1.03716,-1.55832 1.55488,-2.59548c0.51944,-1.0406 0.25972,-1.94876 -0.13072,-2.72792c-0.38356,-0.77916 -3.40904,-8.4796 -4.79364,-11.5584z"></path></g></g></g></svg></a>
+&nbsp; 
+<a href="https://www.tiktok.com/"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="60" height="60"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="none" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none" fill-rule="nonzero"></path><g><path d="M40.42,159.96c-11.85596,0 -21.5,-9.64404 -21.5,-21.5v-98.04c0,-11.85596 9.64404,-21.5 21.5,-21.5h98.04c11.85596,0 21.5,9.64404 21.5,21.5v98.04c0,11.85596 -9.64404,21.5 -21.5,21.5z" fill="#000000" fill-rule="nonzero" opacity="0.35"></path><path d="M36.98,156.52c-11.85596,0 -21.5,-9.64404 -21.5,-21.5v-98.04c0,-11.85596 9.64404,-21.5 21.5,-21.5h98.04c11.85596,0 21.5,9.64404 21.5,21.5v98.04c0,11.85596 -9.64404,21.5 -21.5,21.5z" fill="#ecf0f1" fill-rule="nonzero"></path><path d="M26.66,135.02v-98.04c0,-5.70008 4.61992,-10.32 10.32,-10.32h98.04c5.70008,0 10.32,4.61992 10.32,10.32v98.04c0,5.70008 -4.61992,10.32 -10.32,10.32h-98.04c-5.70008,0 -10.32,-4.61992 -10.32,-10.32z" fill="#14213d" fill-rule="nonzero"></path><path d="M135.02,147.92h-98.04c-7.11392,0 -12.9,-5.78608 -12.9,-12.9v-98.04c0,-7.11392 5.78608,-12.9 12.9,-12.9h98.04c7.11392,0 12.9,5.78608 12.9,12.9v98.04c0,7.11392 -5.78608,12.9 -12.9,12.9zM36.98,29.24c-4.26732,0 -7.74,3.47268 -7.74,7.74v98.04c0,4.26732 3.47268,7.74 7.74,7.74h98.04c4.26732,0 7.74,-3.47268 7.74,-7.74v-98.04c0,-4.26732 -3.47268,-7.74 -7.74,-7.74z" fill="#fca311" fill-rule="nonzero"></path><path d="M102.91964,74.97652c5.12044,3.65844 11.39328,5.80844 18.16836,5.80844v-13.03072c-1.28312,0 -2.55936,-0.13244 -3.81496,-0.39904v10.25636c-6.77336,0 -13.04448,-2.15344 -18.16836,-5.80844v26.58948c0,13.30076 -10.78956,24.08344 -24.0972,24.08344c-4.96392,0 -9.5804,-1.50156 -13.41428,-4.07468c4.37568,4.47028 10.47824,7.24464 17.22924,7.24464c13.30764,0 24.0972,-10.78268 24.0972,-24.08344v-26.58604zM107.62728,61.83228c-2.61612,-2.8552 -4.3344,-6.54976 -4.70764,-10.63304v-1.677h-3.61544c0.90988,5.18752 4.0162,9.62168 8.32308,12.31004zM70.0126,108.1966c-1.462,-1.91608 -2.25148,-4.25872 -2.24804,-6.67016c0,-6.08536 4.93468,-11.0166 11.02348,-11.0166c1.13348,0 2.2618,0.172 3.34368,0.516v-13.31968c-1.2642,-0.172 -2.537,-0.24768 -3.81496,-0.22016v10.36644c-1.08188,-0.344 -2.20848,-0.516 -3.34712,-0.516c-6.0888,0 -11.02348,4.93124 -11.02348,11.0166c0.00344,4.30344 2.46992,8.03068 6.06644,9.84356z" fill="#9b59b6" fill-rule="evenodd"></path><path d="M99.1064,71.80312c5.12044,3.65844 11.39328,5.80844 18.16836,5.80844v-10.25636c-3.78228,-0.80496 -7.12768,-2.78124 -9.64576,-5.52636c-4.3086,-2.68664 -7.41148,-7.11908 -8.31964,-12.3066h-9.49612v52.04032c-0.02236,6.06644 -4.94844,10.97876 -11.02348,10.97876c-3.58104,0 -6.76132,-1.70624 -8.77544,-4.34644c-3.59652,-1.81288 -6.063,-5.54012 -6.063,-9.84012c0,-6.08536 4.93468,-11.0166 11.02348,-11.0166c1.16616,0 2.29104,0.18232 3.34712,0.516v-10.36472c-13.07372,0.27004 -23.58636,10.94608 -23.58636,24.07828c0,6.55664 2.61784,12.49924 6.86796,16.8388c3.83388,2.57312 8.45036,4.07468 13.41428,4.07468c13.30764,0 24.0972,-10.78268 24.0972,-24.08344l-0.0086,-26.59464z" fill="#ecf0f1" fill-rule="evenodd"></path><g fill="#3498db" fill-rule="evenodd"><path d="M117.27304,67.35864v-2.77436c-3.41076,0.00688 -6.751,-0.94944 -9.64576,-2.75544c2.56108,2.8036 5.93228,4.73688 9.64576,5.5298zM99.3042,49.52224c-0.08772,-0.49708 -0.15308,-0.99416 -0.1978,-1.49812v-1.677h-13.11328v52.04376c-0.01892,6.06644 -4.94844,10.97876 -11.02348,10.97876c-1.78364,0 -3.4658,-0.42312 -4.95704,-1.17648c2.01412,2.64192 5.1944,4.34644 8.77544,4.34644c6.07504,0 11.00112,-4.91232 11.02348,-10.97876v-52.0386zM78.31676,77.48772v-2.95324c-1.09564,-0.14964 -2.19988,-0.2236 -3.30756,-0.2236c-13.31108,0 -24.0972,10.78268 -24.0972,24.08344c0,8.34028 4.2398,15.68812 10.68292,20.01048c-4.25012,-4.34128 -6.86796,-10.28216 -6.86796,-16.8388c0,-13.1322 10.51608,-23.80824 23.5898,-24.07828z"></path></g></g></g></svg></a>
+
+</div>
+</div>
+
+<!--- cursore --->
+<span class="bubble"> </span>
+<!-----end cursore----->
+
+
+
+<div id="open-modal-whr" class="modal-window-whr">
+  <div>
+ 
+  <a class="weatherwidget-io" href="https://forecast7.com/it/45d469d19/milan/" data-label_1="MILANO" data-label_2="IT" data-icons="Climacons Animated" data-theme="orange" >MILANO IT
+       <a href="#" title="Close" class="modal-close-whr">
+      <img class="close-whr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABmJLR0QA/wD/AP+gvaeTAAACqUlEQVRIid2VTWsTURSGnzPTZGJF0katQhtt2uJKBEFw4TfizoUSVHDjBwiCrty4ElyJP8CFoATBnbXgwo1uTJVIoa7cWdImmlq/6miLhLQzc4+bxjbJjK1117M63Hve89x3OHcurJWQ5QpSA4d7xA/OinAQtB+xNqiqK/Be4HlgyRN3/GVlVZCuzN4tgTq3RPQcYP+lh4dy37aDm1/GX39dMWRz3/79qjIIbP3bCRs7yUdFTn6fGB5dFtLVf2CfMTwD1q8YsBhVxByanii8iYRsHTiw2Q94y784aA6Rj22W7v5cfPWtvmQt3fd8uf1fAADV7iCQmw3cepLqP5i2jI4DsWZdMhFQ8y3m/EXjiZgStw2ztdCZ8Ixt97nF/GSDE8twJgzQsS5g9NoY+atFupMeAN1JjxdXioxeGyOZCMIgMTsITv7pvcTnobDqmm/xvdpGJjXH0MUSe9JVhi6WyKTmcKtt1HwrTIYix0Ig7AiFeEI210vJdejtnOfppQl6O+ep/Ixz+sH2hk/YhNnWChGJHNmp2RhXh3pQXZArXB5MU/kZj5KAyKZWiOqvqPrupMed7CQidT3cPfWBdMd8NASdaYVAMaw0EVMeXyiTSc1R/hHn+L0+yj/ipDs8Hp1/TyKmEYzFfksgkg+rdWzDxnafkuuQzWV4U2knm8tQch02tvs4tolwIi//ZPUkNXC4xwqCCf7hnji2YSb8nvj4Zvt0pTDV4MQt5idV5WGYYqZmt0xRzZMoACC5OqABAuDEreugXyKUK40p2/JvLF1ogEyN5aeN6gmgukrAL6Mm2/yutFxXt1wYMWqOrsLRJ6PmmFsujDRvhP4T3HJhJB5r26kqOcBbprkH3I/H7F1hAFjhG28Z/zQqR4B+wFlo/A7RYSPW4HJv/NqJ3zsJFUR4GzKjAAAAAElFTkSuQmCC">
+      </a>
+
+  </a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+</div>
+</div>
+
+
+
+
+
+  </main>
+ 
+
+
+  <!--   Core JS Files   -->
+  <script src="./assets/js/core/popper.min.js"></script>
+  <script src="./assets/js/core/bootstrap.min.js"></script>
+  <script src="./assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./assets/js/plugins/chartjs.min.js"></script>
+  <script src='https://unpkg.com/kinet@2.2.1/dist/kinet.min.js'>
+  </script><script  src="./assets/js/cursor_script.js"></script>
+
+  <script>
+
+
+//
+function ToggleNav(apps) {
+	var e = document.getElementById(apps);
+	if(e.style.display == 'none')
+	   e.style.display = 'block';
+	else
+	   e.style.display = 'none';
+ }
+
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+
+var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+new Chart(ctx1, {
+  type: "line",
+  data: {
+    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+      label: "Mobile apps",
+      tension: 0.4,
+      borderWidth: 0,
+      pointRadius: 0,
+      borderColor: "#5e72e4",
+      backgroundColor: gradientStroke1,
+      borderWidth: 3,
+      fill: true,
+      data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
+      maxBarThickness: 6
+
+    }],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false,
+      }
+    },
+    interaction: {
+      intersect: false,
+      mode: 'index',
+    },
+    scales: {
+      y: {
+        grid: {
+          drawBorder: false,
+          display: true,
+          drawOnChartArea: true,
+          drawTicks: false,
+          borderDash: [5, 5]
+        },
+        ticks: {
+          display: true,
+          padding: 10,
+          color: '#fbfbfb',
+          font: {
+            size: 11,
+            family: "Open Sans",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+      x: {
+        grid: {
+          drawBorder: false,
+          display: false,
+          drawOnChartArea: false,
+          drawTicks: false,
+          borderDash: [5, 5]
+        },
+        ticks: {
+          display: true,
+          color: '#ccc',
+          padding: 20,
+          font: {
+            size: 11,
+            family: "Open Sans",
+            style: 'normal',
+            lineHeight: 2
+          },
+        }
+      },
+    },
+  },
+});
+</script>
+<script>
+var win = navigator.platform.indexOf('Win') > -1;
+if (win && document.querySelector('#sidenav-scrollbar')) {
+  var options = {
+    damping: '0.5'
+  }
+  Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+}
+
+
+//calendar
+
+function CalendarControl() {
+const calendar = new Date();
+const calendarControl = {
+  localDate: new Date(),
+  prevMonthLastDate: null,
+  calWeekDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  calMonthName: [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  daysInMonth: function (month, year) {
+    return new Date(year, month, 0).getDate();
+  },
+  firstDay: function () {
+    return new Date(calendar.getFullYear(), calendar.getMonth(), 1);
+  },
+  lastDay: function () {
+    return new Date(calendar.getFullYear(), calendar.getMonth() + 1, 0);
+  },
+  firstDayNumber: function () {
+    return calendarControl.firstDay().getDay() + 1;
+  },
+  lastDayNumber: function () {
+    return calendarControl.lastDay().getDay() + 1;
+  },
+  getPreviousMonthLastDate: function () {
+    let lastDate = new Date(
+      calendar.getFullYear(),
+      calendar.getMonth(),
+      0
+    ).getDate();
+    return lastDate;
+  },
+  navigateToPreviousMonth: function () {
+    calendar.setMonth(calendar.getMonth() - 1);
+    calendarControl.attachEventsOnNextPrev();
+  },
+  navigateToNextMonth: function () {
+    calendar.setMonth(calendar.getMonth() + 1);
+    calendarControl.attachEventsOnNextPrev();
+  },
+  navigateToCurrentMonth: function () {
+    let currentMonth = calendarControl.localDate.getMonth();
+    let currentYear = calendarControl.localDate.getFullYear();
+    calendar.setMonth(currentMonth);
+    calendar.setYear(currentYear);
+    calendarControl.attachEventsOnNextPrev();
+  },
+  displayYear: function () {
+    let yearLabel = document.querySelector(".calendar .calendar-year-label");
+    yearLabel.innerHTML = calendar.getFullYear();
+  },
+  displayMonth: function () {
+    let monthLabel = document.querySelector(
+      ".calendar .calendar-month-label"
+    );
+    monthLabel.innerHTML = calendarControl.calMonthName[calendar.getMonth()];
+  },
+  selectDate: function (e) {
+    console.log(
+      `${e.target.textContent} ${
+        calendarControl.calMonthName[calendar.getMonth()]
+      } ${calendar.getFullYear()}`
+    );
+  },
+  plotSelectors: function () {
+    document.querySelector(
+      ".calendar"
+    ).innerHTML += `<div class="calendar-inner"><div class="calendar-controls">
+      <div class="calendar-prev"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M88.2 3.8L35.8 56.23 28 64l7.8 7.78 52.4 52.4 9.78-7.76L45.58 64l52.4-52.4z"/></svg></a></div>
+      <div class="calendar-year-month">
+      <div class="calendar-month-label"></div>
+      <div>-</div>
+      <div class="calendar-year-label"></div>
+      </div>
+      <div class="calendar-next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
+      </div>
+      <div class="calendar-today-date">Today: 
+        ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}, 
+        ${calendarControl.localDate.getDate()}, 
+        ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]} 
+        ${calendarControl.localDate.getFullYear()}
+      </div>
+      <div class="calendar-body"></div></div>`;
+  },
+  plotDayNames: function () {
+    for (let i = 0; i < calendarControl.calWeekDays.length; i++) {
+      document.querySelector(
+        ".calendar .calendar-body"
+      ).innerHTML += `<div>${calendarControl.calWeekDays[i]}</div>`;
+    }
+  },
+  plotDates: function () {
+    document.querySelector(".calendar .calendar-body").innerHTML = "";
+    calendarControl.plotDayNames();
+    calendarControl.displayMonth();
+    calendarControl.displayYear();
+    let count = 1;
+    let prevDateCount = 0;
+
+    calendarControl.prevMonthLastDate = calendarControl.getPreviousMonthLastDate();
+    let prevMonthDatesArray = [];
+    let calendarDays = calendarControl.daysInMonth(
+      calendar.getMonth() + 1,
+      calendar.getFullYear()
+    );
+    // dates of current month
+    for (let i = 1; i < calendarDays; i++) {
+      if (i < calendarControl.firstDayNumber()) {
+        prevDateCount += 1;
+        document.querySelector(
+          ".calendar .calendar-body"
+        ).innerHTML += `<div class="prev-dates"></div>`;
+        prevMonthDatesArray.push(calendarControl.prevMonthLastDate--);
+      } else {
+        document.querySelector(
+          ".calendar .calendar-body"
+        ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+      }
+    }
+    //remaining dates after month dates
+    for (let j = 0; j < prevDateCount + 1; j++) {
+      document.querySelector(
+        ".calendar .calendar-body"
+      ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+    }
+    calendarControl.highlightToday();
+    calendarControl.plotPrevMonthDates(prevMonthDatesArray);
+    calendarControl.plotNextMonthDates();
+  },
+  attachEvents: function () {
+    let prevBtn = document.querySelector(".calendar .calendar-prev a");
+    let nextBtn = document.querySelector(".calendar .calendar-next a");
+    let todayDate = document.querySelector(".calendar .calendar-today-date");
+    let dateNumber = document.querySelectorAll(".calendar .dateNumber");
+    prevBtn.addEventListener(
+      "click",
+      calendarControl.navigateToPreviousMonth
+    );
+    nextBtn.addEventListener("click", calendarControl.navigateToNextMonth);
+    todayDate.addEventListener(
+      "click",
+      calendarControl.navigateToCurrentMonth
+    );
+    for (var i = 0; i < dateNumber.length; i++) {
+        dateNumber[i].addEventListener(
+          "click",
+          calendarControl.selectDate,
+          false
+        );
+    }
+  },
+  highlightToday: function () {
+    let currentMonth = calendarControl.localDate.getMonth() + 1;
+    let changedMonth = calendar.getMonth() + 1;
+    let currentYear = calendarControl.localDate.getFullYear();
+    let changedYear = calendar.getFullYear();
+    if (
+      currentYear === changedYear &&
+      currentMonth === changedMonth &&
+      document.querySelectorAll(".number-item")
+    ) {
+      document
+        .querySelectorAll(".number-item")
+        [calendar.getDate() - 1].classList.add("calendar-today");
+    }
+  },
+  plotPrevMonthDates: function(dates){
+    dates.reverse();
+    for(let i=0;i<dates.length;i++) {
+        if(document.querySelectorAll(".prev-dates")) {
+            document.querySelectorAll(".prev-dates")[i].textContent = dates[i];
+        }
+    }
+  },
+  plotNextMonthDates: function(){
+   let childElemCount = document.querySelector('.calendar-body').childElementCount;
+   //7 lines
+   if(childElemCount > 42 ) {
+       let diff = 49 - childElemCount;
+       calendarControl.loopThroughNextDays(diff);
+   }
+
+   //6 lines
+   if(childElemCount > 35 && childElemCount <= 42 ) {
+    let diff = 42 - childElemCount;
+    calendarControl.loopThroughNextDays(42 - childElemCount);
+   }
+
+  },
+  loopThroughNextDays: function(count) {
+    if(count > 0) {
+        for(let i=1;i<=count;i++) {
+            document.querySelector('.calendar-body').innerHTML += `<div class="next-dates">${i}</div>`;
+        }
+    }
+  },
+  attachEventsOnNextPrev: function () {
+    calendarControl.plotDates();
+    calendarControl.attachEvents();
+  },
+  init: function () {
+    calendarControl.plotSelectors();
+    calendarControl.plotDates();
+    calendarControl.attachEvents();
+  }
+};
+calendarControl.init();
+}
+
+const calendarControl = new CalendarControl();
+
+//
+
+
+  </script>
+
+
+  <script src="./assets/js/argon-dashboard.min.js?v=2.0.2"></script>
+  <script src="./assets/js/argon-dashboard.js"></script>
+</body>
+
+</html>
